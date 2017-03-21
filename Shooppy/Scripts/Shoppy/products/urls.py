@@ -1,10 +1,9 @@
 from django.conf.urls import url
 from . import views
-
+from django.contrib.auth import views as auth_views
 urlpatterns = [
-	url(r'^$', views.ProductList.as_view(), name='hola'),
-	url(r'^product/(?P<pk>[0-9]+)/$', views.ProductDetail.as_view(), name='detail'),
-	url(r'^product/new', views.new_product, name='new_product'),
+    url(r'^login/$', views.auth_login, name='authentication'),
+    url(r'^$', views.ProductList.as_view(), name='hola'),
+    url(r'^product/(?P<pk>[0-9]+)/$', views.ProductDetail.as_view(), name='detail'),
+    url(r'^product/new', views.new_product, name='new_product'),
 ]
-
-    

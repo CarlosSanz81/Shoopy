@@ -10,7 +10,7 @@
 	<h1 style="color:red">
 		Hola
 		{% if user.is_authenticated %}
-			<h3>{{ user.username }} | <a href="">Logout</a></h3>
+			<h3>{{ user.username }} | <a href="{% url "products:logout" %}">Logout</a></h3>
 		{% else %}
 			<h3>{{ user.username }} | <a href="{% url "products:authentication"%}">Login</a></h3>
 		{% endif %}
